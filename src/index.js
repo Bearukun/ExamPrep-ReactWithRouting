@@ -3,6 +3,21 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+import {hashHistory,Router, Route} from 'react-router';
+import List from './List.js';
+import Details from './Details.js';
+import Data from './data/data.json';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+
+    <Router history={hashHistory}>
+        <Route path="/" component={App}>
+            <Route path="/list" component={List}  propsdata={Data}/>
+            <Route path="/details/:id" component={Details} />
+        </Route>
+    </Router>
+    ,
+
+    document.getElementById('root')
+);
 registerServiceWorker();
