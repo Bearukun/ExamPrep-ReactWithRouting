@@ -13,7 +13,7 @@ ReactDOM.render(
     <Router history={hashHistory}>
         <Route path="/" component={App}>
             <Route path="/list" component={List}  propsdata={Data}/>
-            <Route path="/details/:id" component={Details} />
+            <Route path="/details/:id" component={Details} propsdata={Data}/>
         </Route>
     </Router>
     ,
